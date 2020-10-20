@@ -20,6 +20,8 @@ public class Main {
 	    System.out.println(sumArray);
 
 
+
+
 	    H1_36 nameSorter = new H1_36();
 	    ArrayList<String> myNameList = new ArrayList<>();
 //	    myNameList.add("Bob");
