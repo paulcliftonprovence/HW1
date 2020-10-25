@@ -1,0 +1,259 @@
+import java.util.ArrayList;
+
+public class H1_31 
+{	
+	public H1_31() 
+	{
+	}
+	public ArrayList<Integer> arrayListInit() 
+	{
+		int givenArrayListSize = 10;
+		ArrayList<Integer> list = new ArrayList<>();
+		for (int i = 0; i < 2; i++) 
+		{
+			for (int j = 0; j < givenArrayListSize / 2; j++)
+			{
+				list.add(j);
+			}
+		}
+		return list;
+	}
+}
+
+import java.util.ArrayList;
+
+public class H1_33 {
+	public H1_33() {
+	}
+	public void countingNegatives() {
+		ArrayList<Integer> list = new ArrayList<>();
+		int sum = 0;
+		for (int negativeValue : list)
+		{
+			if (negativeValue < 0)
+			{
+				sum = sum + 1;
+			}
+		}System.out.print(sum);
+	}
+}
+
+
+import java.util.ArrayList;
+
+public class H1_34 {
+
+	public H1_34() {
+
+	}
+	public int arrayListSum(ArrayList<Integer> pList)
+	{
+		int total = 0;
+		for (int values : pList)
+		{
+			total = values + total;
+		}
+		return total;
+	}
+
+}
+
+
+import java.util.ArrayList;
+
+public class H1_35 
+{
+	public ArrayList<Integer> arrayListCreate(int pLen, int pIntValue)
+	{
+		ArrayList<Integer> runningList = new ArrayList<>();
+		for (int i = 0; i < pLen; i++)
+		{
+			if (pLen == 0)
+			{
+				return null;
+			}
+			runningList.add(pIntValue);
+		}
+		return runningList;
+	}
+	public H1_35() 
+	{
+
+	}
+
+}
+
+
+import java.util.ArrayList;
+
+public class H1_36 
+{
+	public void insertName(ArrayList<String> pList, String pName)
+	{
+		int i = 0;
+		while (!(pList.get(i).compareTo(pName) > 0))
+		{
+			i++;
+		}
+		pList.add(i, pName);
+		System.out.println(pList);
+	}
+}
+
+
+import java.util.ArrayList;
+
+public class H1_37 
+{
+	public void arrayListRemove(ArrayList<Integer> pList, int pValue)
+	{
+		for (int i =0; i < pList.size(); i++)
+		{
+			if (pList.get(i) == pValue) { pList.remove(i); }
+		}
+		System.out.println(pList);
+	}
+
+}
+
+
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.PrintWriter;
+
+public class H1_43 
+{
+	public void textScanner() throws FileNotFoundException
+	{
+		Scanner console = new Scanner(System.in);
+		System.out.print("Input file: ");
+		String inputFileName = console.next();
+
+		File inFile = new File(inputFileName);
+		String outputFileName = inputFileName + ".txt";
+
+		PrintWriter out = new PrintWriter(outputFileName);
+		Scanner in = new Scanner(inFile);
+		int j = 0;
+		while (in.hasNextLine())
+		{
+			//read the next line
+			String lines = in.nextLine();
+			j++;
+			out.printf("[%03d] ", j);
+			//writes the next line to the file
+			out.println(lines);
+		}
+		in.close();
+		out.close();
+		console.close();
+
+	}
+
+}
+
+
+
+public class H1_65 
+{
+	private int mX;
+	private int mY = 0;
+	private static final int A = 100;
+	public static final int B = 200;
+
+	public void setX(int i)
+	{
+		mX = i;
+	}
+
+	public int getX()
+	{
+		return mX;
+	}
+
+	public void setY(int i)
+	{
+		mY = i;
+	}
+
+	public int getY()
+	{
+		return mY;
+	}
+
+	public H1_65(int pX)
+	{
+		setX(pX);
+	}
+
+	public H1_65()
+	{
+		mX = -1;
+	}
+
+}
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
+public class MainMethod {
+	public static void main(String[] args) 
+	{
+		H1_31 robot = new H1_31();
+		ArrayList<Integer> myArray = robot.arrayListInit();
+		System.out.print(myArray);
+
+		System.out.println();
+
+		H1_33 countingN = new H1_33();
+		countingN.countingNegatives();
+
+		System.out.println();
+
+		ArrayList<Integer> sum34 = new ArrayList<>();
+		sum34.add(9);
+		sum34.add(5);
+		H1_34 sumNumber = new H1_34();
+		int total = sumNumber.arrayListSum(sum34);
+		System.out.println(total);
+
+		H1_35 runningNumbers = new H1_35();
+		ArrayList<Integer> runningNumbersPrinted = runningNumbers.arrayListCreate(3,5);
+		System.out.println(runningNumbersPrinted);
+
+		ArrayList<String> pList = new ArrayList<>();
+		pList.add("Adam");
+		pList.add("Baker");
+		pList.add("Charles");
+		String pName = "Brandon";
+		H1_36 nameInsertMethod = new H1_36();
+		nameInsertMethod.insertName(pList, pName);
+
+		ArrayList<Integer> removed = new ArrayList<>();
+		//removed.add(1);
+		//removed.add(2);
+		//removed.add(3);
+		//removed.add(4);
+		//removed.add(5);
+		int pValue = 0;
+		H1_37 nMethod = new H1_37();
+		nMethod.arrayListRemove(removed, pValue);
+
+		/*H1_43 newText = new H1_43();
+		try {
+			newText.textScanner();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 */
+
+		H1_65 cObj1 = new H1_65();
+		//H1_65 cObj2 = new H1_65(10);
+		cObj1.setX(20);
+		System.out.print(cObj1.getX());
+
+	}
+}
